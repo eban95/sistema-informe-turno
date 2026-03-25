@@ -1,0 +1,145 @@
+.acceso-container,
+.informe-container {
+display: flex;
+justify-content: center;
+padding: 40px 20px;
+}
+.acceso-card,
+.informe-card {
+background: #ffffff;
+width: 100%;
+border-radius: 12px;
+box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+}
+.acceso-card {
+max-width: 420px;
+padding: 30px;
+text-align: center;
+}
+.informe-card {
+max-width: 1100px;
+padding: 30px;
+}
+
+.acceso-card h2,
+.informe-card h2 {
+margin-bottom: 10px;
+color: #1f2a3a;
+}
+.acceso-card p,
+.informe-card p {
+margin-bottom: 20px;
+color: #555;
+}
+.acceso-card input,
+.form-grid input {
+width: 100%;
+padding: 12px;
+border: 1px solid #ccc;
+border-radius: 8px;
+font-size: 15px;
+box-sizing: border-box;
+}
+.acceso-card input {
+margin-bottom: 15px;
+font-size: 16px;
+}
+.acceso-card button {
+width: 100%;
+padding: 12px;
+background-color: #1f2a3a;
+color: white;
+border: none;
+border-radius: 8px;
+font-size: 16px;
+cursor: pointer;
+}
+.acceso-card button:hover {
+background-color: #2d3b50;
+}
+.mensaje-error {
+margin-top: 12px;
+color: red;
+font-size: 14px;
+}
+.form-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 15px;
+margin-bottom: 20px;
+}
+.btn-principal,
+.btn-guardar {
+padding: 12px 20px;
+border: none;
+border-radius: 8px;
+font-size: 15px;
+cursor: pointer;
+color: white;
+margin-top: 10px;
+}
+.btn-principal {
+background-color: #1f2a3a;
+}
+.btn-principal:hover {
+background-color: #2d3b50;
+}
+.btn-guardar {
+background-color: #198754;
+}
+.btn-guardar:hover {
+background-color: #157347;
+}
+.tabla-container,
+.tabla-responsive {
+width: 100%;
+margin-top: 20px;
+overflow-x: auto;
+}
+.tabla-estilo {
+width: 100%;
+min-width: 700px;
+border-collapse: collapse;
+border-radius: 10px;
+overflow: hidden;
+background: #ffffff;
+}
+.tabla-estilo thead {
+background-color: #1f2a3a;
+color: white;
+}
+.tabla-estilo th,
+.tabla-estilo td {
+border: 1px solid #ddd;
+padding: 12px;
+text-align: left;
+}
+.tabla-estilo tbody tr {
+border-bottom: 1px solid #eee;
+}
+.tabla-estilo tbody tr:hover {
+background-color: #f5f7fa;
+}
+@media (max-width: 768px) {
+.acceso-container,
+.informe-container {
+    padding: 20px 12px;
+}
+.acceso-card,
+.informe-card {
+    padding: 20px;
+}
+.tabla-estilo {
+    min-width: 650px;
+}
+.tabla-estilo th,
+.tabla-estilo td {
+    font-size: 14px;
+    padding: 8px;
+}
+.btn-principal,
+.btn-guardar,
+.acceso-card button {
+    width: 100%;
+}
+}

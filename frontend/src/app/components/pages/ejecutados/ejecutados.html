@@ -1,0 +1,62 @@
+<div class="tabla-container">
+    <table class="tabla-estilo">
+    <thead>
+        <tr>
+        <th>Mecánico</th>
+        <th>Máquina</th>
+        <th>Área</th>
+        <th>Comentarios</th>
+        <th>Tiempo</th>
+        <th>Acciones</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @for (ejecutado of ejecutados; track ejecutado._id) {
+        <tr>
+            <td>{{ ejecutado.name }}</td>
+            <td>{{ ejecutado.maquina }}</td>
+            <td>{{ ejecutado.area }}</td>
+            <td>{{ ejecutado.comentarios }}</td>
+            <td>{{ ejecutado.tiempo }} min</td>
+            <td class="acciones">
+            <button class="btn-ver" (click)="verEjecutado(ejecutado)">Ver</button>
+            <button class="btn-editar" (click)="editarEjecutado(ejecutado)">Editar</button>
+            <button class="btn-eliminar" (click)="eliminarEjecutado(ejecutado._id)">Eliminar</button>
+            </td>
+        </tr>
+        }
+    </tbody>
+    </table>
+</div>
+<div *ngIf="ejecutadoSeleccionado" class="detalle-card">
+    <div class="detalle-header">
+    <h3>Detalle del ejecutado</h3>
+    <button class="btn-cerrar" (click)="ejecutadoSeleccionado = null">Cerrar</button>
+    </div>
+
+    <div class="detalle-grid">
+    <p><strong>Mecánico:</strong> {{ ejecutadoSeleccionado.name }}</p>
+    <p><strong>Máquina:</strong> {{ ejecutadoSeleccionado.maquina }}</p>
+    <p><strong>Área:</strong> {{ ejecutadoSeleccionado.area }}</p>
+    <p><strong>Comentarios:</strong> {{ ejecutadoSeleccionado.comentarios }}</p>
+    <p><strong>Tiempo:</strong> {{ ejecutadoSeleccionado.tiempo }} min</p>
+    </div>
+</div>
+
+<div *ngIf="ejecutadoEditando" class="editar-card">
+    <div class="editar-header">
+    <h3>Editar ejecutado</h3>
+    <button class="btn-cancelar" (click)="ejecutadoEditando = null">Cancelar</button>
+    </div>
+
+    <div class="editar-grid">
+    <input type="text" [(ngModel)]="editName" placeholder="Mecánico">
+    <input type="text" [(ngModel)]="editMaquina" placeholder="Máquina">
+    <input type="text" [(ngModel)]="editArea" placeholder="Área">
+    <input type="text" [(ngModel)]="editComentarios" placeholder="Comentarios">
+    <input type="number" [(ngModel)]="editTiempo" placeholder="Tiempo en minutos">
+    </div>
+
+    <button class="btn-guardar-cambios" (click)="guardarCambios()">Guardar cambios</button>
+</div>

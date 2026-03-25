@@ -1,0 +1,58 @@
+<div *ngIf="!accesoPermitido" class="acceso-container">
+    <div class="acceso-card">
+    <h2>Acceso al informe de turno</h2>
+    <p>Ingresa el código para registrar las intervenciones del turno.</p>
+    <input
+        type="password"
+        [(ngModel)]="codigoIngresado"
+        placeholder="Ingrese el código"
+    >
+    <button (click)="validarCodigo()">Ingresar</button>
+    <p class="mensaje-error">{{ mensajeError }}</p>
+    </div>
+</div>
+
+<div *ngIf="accesoPermitido" class="informe-container">
+    <div class="informe-card">
+    <h2>Registrar intervención</h2>
+    <p>Completa los datos de la intervención realizada durante el turno.</p>
+
+    <div class="form-grid">
+        <input type="text" [(ngModel)]="mecanico" placeholder="Mecánico">
+        <input type="text" [(ngModel)]="maquina" placeholder="Máquina">
+        <input type="text" [(ngModel)]="area" placeholder="Área">
+        <input type="text" [(ngModel)]="comentarios" placeholder="Comentarios">
+        <input type="number" [(ngModel)]="tiempo" placeholder="Tiempo en minutos">
+    </div>
+
+    <button class="btn-principal" (click)="agregarIntervencion()">Agregar intervención</button>
+
+    <h3>Intervenciones del turno</h3>
+
+<div class="tabla-container" *ngIf="intervenciones.length > 0">
+<table class="tabla-estilo">
+    <thead>
+    <tr>
+        <th>Mecánico</th>
+        <th>Máquina</th>
+        <th>Área</th>
+        <th>Comentarios</th>
+        <th>Tiempo</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i of intervenciones">
+        <td>{{ i.name }}</td>
+        <td>{{ i.maquina }}</td>
+        <td>{{ i.area }}</td>
+        <td>{{ i.comentarios }}</td>
+        <td>{{ i.tiempo }} min</td>
+    </tr>
+    </tbody>
+</table>
+</div>
+
+    <button class="btn-guardar" (click)="guardarTurno()">Guardar turno</button>
+    </div>
+</div>
+
