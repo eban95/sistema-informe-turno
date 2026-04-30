@@ -90,6 +90,18 @@ background-color: #198754;
 .btn-guardar:hover {
 background-color: #157347;
 }
+.btn-cerrar-turno {
+    background-color: #dc3545;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+.btn-cerrar-turno:hover {
+    background-color: #bb2d3b;
+}
 .tabla-container,
 .tabla-responsive {
 width: 100%;
@@ -142,4 +154,12 @@ background-color: #f5f7fa;
 .acceso-card button {
     width: 100%;
 }
+}
+.turno-badge {
+    background-color: #1f2a3a;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 8px;
+    display: inline-block;
+    margin-bottom: 15px;
 }

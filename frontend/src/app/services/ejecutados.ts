@@ -1,21 +1,21 @@
-import { Inject, inject, Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class EjecutadosService {
   private httpClient = inject(HttpClient);
-  private apiUrl = 'http://localhost:3000/ejecutados';
+  private readonly apiUrl = environment.apiUrl;
 
-  getallEjecutados() {
+  getAllEjecutados() {
     return this.httpClient.get(this.apiUrl);
   }
-  createEjecutado(data: any) {
+  createEjecutado(data: unknown) {
     return this.httpClient.post(this.apiUrl, data);
   }
-  updateEjecutado(id: string, data: any) {
+  updateEjecutado(id: string, data: unknown) {
     return this.httpClient.put(`${this.apiUrl}/${id}`, data);
   }
   deleteEjecutado(id: string) {

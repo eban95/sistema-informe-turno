@@ -1,0 +1,91 @@
+<div class="estadisticas-container">
+<div class="estadisticas-card">
+    <h2>Estadísticas</h2>
+    <p>Resumen general de las intervenciones registradas.</p>
+
+    <div class="resumen-grid">
+    <div class="resumen-item">
+        <h3>Total intervenciones</h3>
+        <p>{{ totalIntervenciones }}</p>
+    </div>
+    </div>
+
+    <div class="tabla-bloque">
+    <h3>Máquinas con más intervenciones</h3>
+    <table class="tabla-estadisticas">
+        <thead>
+        <tr>
+            <th>Máquina</th>
+            <th>Cantidad</th>
+        </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of estadisticasMaquinas">
+            <td>{{ item.nombre }}</td>
+            <td>{{ item.cantidad }}</td>
+        </tr>
+        </tbody>
+    </table>
+    </div>
+
+    <div class="tabla-bloque">
+    <h3>Intervenciones por horno</h3>
+    <table class="tabla-estadisticas">
+        <thead>
+        <tr>
+            <th>Horno</th>
+            <th>Cantidad</th>
+        </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of estadisticasHornos">
+            <td>{{ item.nombre }}</td>
+            <td>{{ item.cantidad }}</td>
+        </tr>
+        </tbody>
+    </table>
+    </div>
+
+    <div class="tabla-bloque">
+    <h3>Intervenciones por mecánico</h3>
+    <table class="tabla-estadisticas">
+        <thead>
+        <tr>
+            <th>Mecánico</th>
+            <th>Cantidad</th>
+        </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of estadisticasMecanicos">
+            <td>{{ item.nombre }}</td>
+            <td>{{ item.cantidad }}</td>
+        </tr>
+        </tbody>
+    </table>
+    </div>
+</div>
+</div>
+<div class="tabla-bloque" *ngIf="maquinasCriticas.length > 0">
+    <h3 style="color: red;">⚠️ Máquinas con fallas repetitivas</h3>
+
+    <table class="tabla-estadisticas">
+    <thead>
+        <tr>
+        <th>Máquina</th>
+        <th>Intervenciones</th>
+        <th>Acción</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of maquinasCriticas">
+        <td>{{ item.nombre }}</td>
+        <td>{{ item.cantidad }}</td>
+        <td>
+        <button (click)="generarOrden(item.nombre)" class="btn-generar">
+            Generar orden
+            </button>
+        </td>
+        </tr>
+    </tbody>
+    </table>
+</div>

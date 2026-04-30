@@ -1,39 +1,48 @@
 .ordenes-container {
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 60px 20px;
+    padding: 40px 20px;
 }
+
 .ordenes-card {
     background: #ffffff;
-    padding: 40px;
-    border-radius: 14px;
-    text-align: center;
-    max-width: 500px;
     width: 100%;
+    max-width: 1100px;
+    padding: 30px;
+    border-radius: 12px;
     box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
 }
+
 .ordenes-card h2 {
-    color: #1f2a3a;
     margin-bottom: 10px;
+    color: #1f2a3a;
 }
+
 .ordenes-card p {
     color: #555;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
-.mensaje-secundario {
-    font-size: 14px;
-    color: #888;
+
+.tabla-ordenes {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
 }
-.btn-volver {
-    margin-top: 20px;
-    padding: 12px 20px;
+
+.tabla-ordenes thead {
     background-color: #1f2a3a;
     color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
 }
-.btn-volver:hover {
-    background-color: #2d3b50;
+
+.tabla-ordenes th,
+.tabla-ordenes td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.tabla-ordenes tbody tr:hover {
+    background-color: #f5f7fa;
 }

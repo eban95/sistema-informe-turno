@@ -1,13 +1,29 @@
 <div class="ordenes-container">
     <div class="ordenes-card">
-    <h2>🚧 Módulo en construcción</h2>
-    <p>
-        Estamos trabajando en el módulo de órdenes para brindarte una mejor experiencia.
-    </p>
+    <h2>Órdenes generadas</h2>
+    <p>Aquí se visualizan las órdenes creadas automáticamente o manualmente.</p>
 
-    <p class="mensaje-secundario">
-        Muy pronto podrás gestionar órdenes de trabajo, hacer seguimiento y optimizar los procesos del turno.
-    </p>
+      <table class="tabla-ordenes" *ngIf="ordenes.length > 0">
+        <thead>
+        <tr>
+            <th>Tipo</th>
+            <th>Máquina</th>
+            <th>Actividad</th>
+            <th>Tiempo estimado</th>
+            <th>Estado</th>
+        </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let orden of ordenes">
+            <td>{{ orden.tipo }}</td>
+            <td>{{ orden.maquina }}</td>
+            <td>{{ orden.actividad }}</td>
+            <td>{{ orden.tiempoEstimado }} min</td>
+            <td>{{ orden.estado }}</td>
+        </tr>
+        </tbody>
+    </table>
 
+      <p *ngIf="ordenes.length === 0">No hay órdenes generadas aún.</p>
     </div>
 </div>

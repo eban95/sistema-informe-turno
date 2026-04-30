@@ -1,3 +1,27 @@
+<div class="filtros-card">
+    <h3>Filtros</h3>
+    <div class="filtros-grid">
+    <select [(ngModel)]="filtroMecanico">
+        <option value="">Todos los mecánicos</option>
+        <option *ngFor="let mecanico of listaMecanicos" [value]="mecanico">
+        {{ mecanico }}
+        </option>
+    </select>
+    <select [(ngModel)]="filtroMaquina">
+        <option value="">Todas las máquinas</option>
+        <option *ngFor="let maquina of listaMaquinas" [value]="maquina">
+        {{ maquina }}
+        </option>
+    </select>
+    <select [(ngModel)]="filtroHorno">
+        <option value="">Todos los hornos</option>
+        <option *ngFor="let horno of listaHornos" [value]="horno">
+        {{ horno }}
+        </option>
+    </select>
+    </div>
+</div>
+
 <div class="tabla-container">
     <table class="tabla-estilo">
     <thead>
@@ -12,7 +36,7 @@
     </thead>
 
     <tbody>
-        @for (ejecutado of ejecutados; track ejecutado._id) {
+        @for (ejecutado of ejecutadosFiltrados; track ejecutado._id) {
         <tr>
             <td>{{ ejecutado.name }}</td>
             <td>{{ ejecutado.maquina }}</td>

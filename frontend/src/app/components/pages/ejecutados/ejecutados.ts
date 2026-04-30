@@ -30,7 +30,7 @@ export class Ejecutados implements OnInit {
   }
 
   cargarEjecutados() {
-    this.EjecutadosService.getallEjecutados().subscribe((res: any) => {
+    this.EjecutadosService.getAllEjecutados().subscribe((res: any) => {
       this.ejecutados = res.data || res;
       console.log('ejecutados', this.ejecutados);
       this.cdr.detectChanges();
@@ -93,4 +93,28 @@ export class Ejecutados implements OnInit {
         }
       });
   }
-}
+  listaMecanicos: string [] = ['carlos largo','pedro almanza','luis cepeda','alexis torres','yeison puentes','fernando pachon','javier hernandez','duvan moreno','jholman hernandez','jorge cardenas'];
+  listaMaquinas: string [] = ['Emmeti 1','Emetti 2','Emetti 3','Oms 1','Oms 2','allianz 1','allianz 2','Oms 5','Oms 6','Emmeti 10','Emmeti 11','Emmeti 12','Emmeti 13','Emmeti 14','Emmeti 15','Ems 1','Ems 2','Ems 3','Linea de flejado 0','Linea de fjeado 1','Linea de flejado 2','linea de flejado 3','linea de flejado 101','linea de flejado 102','Flejadora 0','Flejadora 1','Flejadora 2','Flejadora 3','Flejadora 4','Flejadora 5','Flejadora 6','Flejadora 101','Flejadora 102','Envolvedora 0','Envolvedora 1','Envolvedora 2','Envolvedora 3','Envolvedora 101','Envolvedora 102','Transfercar 10','Transfercar 20','Transfercar 30','Transfercar 40','Manejos y transporte B1','Manejos y transporte B2','Manejos y transporte B3','Manejos y transporte D0','Manejos y transporte D1','Manejos y transporte D2','Manejos y transporte D3','Manejos y transporte E1','Manejos y transporte E2','Manejos y transporte E3','Manejos y transporte E4','Manejos y transporte F1','Manejos y transporte F2','Manejos y transporte F3'];
+  listaHornos: string[] = ['Horno B', 'Horno D', 'Horno E', 'Horno F'];
+  
+    filtroMecanico: string = '';
+    filtroMaquina: string = '';
+    filtroHorno: string = '';
+    filtroComentario: string = '';
+
+    get ejecutadosFiltrados() {
+      return this.ejecutados.filter((ejecutado: any) => {
+        const coincideMecanico =
+          !this.filtroMecanico || ejecutado.name === this.filtroMecanico;
+    
+        const coincideMaquina =
+          !this.filtroMaquina || ejecutado.maquina === this.filtroMaquina;
+    
+        const coincideHorno =
+          !this.filtroHorno || ejecutado.horno === this.filtroHorno;
+    
+        return coincideMecanico && coincideMaquina && coincideHorno;
+      });
+    }
+    }
+

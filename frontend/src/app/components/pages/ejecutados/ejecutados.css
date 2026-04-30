@@ -173,3 +173,24 @@
 .btn-cancelar:hover {
     background-color: #5c636a;
 }
+.filtros-card {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+    padding: 20px;
+}
+.filtros-card h3 {
+    margin: 0 0 15px 0;
+    color: #1f2a3a;
+}
+.filtros-grid select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    box-sizing: border-box;
+    background: white;
+}
