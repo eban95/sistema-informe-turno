@@ -7,7 +7,7 @@ providedIn: 'root'
 export class OrdenesService {
 
 private httpClient = inject(HttpClient);
-private apiUrl = 'http://54.82.154.210/ordenes';
+private apiUrl = 'http://54.82.154.210:3000/ordenes';
 
 createOrden(data: any) {
     return this.httpClient.post(this.apiUrl, data);

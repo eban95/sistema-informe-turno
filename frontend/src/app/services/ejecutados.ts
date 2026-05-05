@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class EjecutadosService {
   private httpClient = inject(HttpClient);
-  private readonly apiUrl = 'http://54.82.154.210/ejecutados';
+  private readonly apiUrl = 'http://54.82.154.210:3000/ejecutados';
   
 
   getAllEjecutados() {
