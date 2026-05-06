@@ -16,6 +16,7 @@ const ejecutadosSchema = new Schema({
     tiempo: {type: Number, required: true},
     area: {type: String, required: true},
     comentarios: {type: String, required: false},
+    horno: {type: String, required: false},
 },{versionKey: false, timestamps: true});
 
 export default model('Ejecutados', ejecutadosSchema);

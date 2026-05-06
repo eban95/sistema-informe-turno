@@ -31,6 +31,7 @@
         <th>Área</th>
         <th>Comentarios</th>
         <th>Tiempo</th>
+        <th>Horno</th>
         <th>Acciones</th>
         </tr>
     </thead>
@@ -43,6 +44,7 @@
             <td>{{ ejecutado.area }}</td>
             <td>{{ ejecutado.comentarios }}</td>
             <td>{{ ejecutado.tiempo }} min</td>
+            <td>{{ ejecutado.horno }}</td>
             <td class="acciones">
             <button class="btn-ver" (click)="verEjecutado(ejecutado)">Ver</button>
             <button class="btn-editar" (click)="editarEjecutado(ejecutado)">Editar</button>
