@@ -21,6 +21,7 @@ export class Ejecutados implements OnInit {
   editMaquina: string = '';
   editArea: string = '';
   editComentarios: string = '';
+  editHorno: string = '';
   editTiempo: number | null = null;
 
   ejecutadoSeleccionado: any = null;
