@@ -30,7 +30,6 @@ server.use(express.static(path.join(__dirname, "public")));
 server.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "public", "index.html"));
 });
- k7m
 
 server.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
