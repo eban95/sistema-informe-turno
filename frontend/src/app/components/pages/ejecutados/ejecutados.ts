@@ -49,6 +49,7 @@ export class Ejecutados implements OnInit {
     this.editMaquina = ejecutado.maquina;
     this.editArea = ejecutado.area;
     this.editComentarios = ejecutado.comentarios;
+    this.editHorno = ejecutado.horno;
     this.editTiempo = ejecutado.tiempo;
   }
 
@@ -77,6 +78,7 @@ export class Ejecutados implements OnInit {
       name: this.editName,
       maquina: this.editMaquina,
       area: this.editArea,
+      horno: this.editHorno,
       comentarios: this.editComentarios,
       tiempo: this.editTiempo
     };

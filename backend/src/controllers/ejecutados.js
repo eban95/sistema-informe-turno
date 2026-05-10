@@ -5,12 +5,13 @@ const isCastError = (error) => error?.name === "CastError";
 const ejecutadosController = {
   create: async (req, res) => {
     try {
-      const { name, maquina, tiempo, area, comentarios } = req.body;
+      const { name, maquina, tiempo, area, horno, comentarios } = req.body;
       const newEjecutado = new ejecutadosModel({
         name,
         maquina,
         tiempo,
         area,
+        horno,
         comentarios,
       });
       await newEjecutado.save();
@@ -48,10 +49,10 @@ const ejecutadosController = {
   update: async (req, res) => {
     try {
       const { id } = req.params;
-      const { name, maquina, tiempo, area, comentarios } = req.body;
+      const { name, maquina, tiempo, area, horno, comentarios } = req.body;
       const ejecutadoUpdate = await ejecutadosModel.findByIdAndUpdate(
         id,
-        { name, maquina, tiempo, area, comentarios },
+        { name, maquina, tiempo, area, horno, comentarios },
         { new: true, runValidators: true }
       );
       if (!ejecutadoUpdate) {
